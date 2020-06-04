@@ -5,7 +5,7 @@ class WarningLetterEnum(Enum):
     LTR2 = 'LTR2'
     LTR3 = 'LTR3'
 
-class AutoInsuranceAction:
+class AutoInsuranceAction():
     def __init__(self, premium_increase : int, warning_letter_enum : WarningLetterEnum, is_policy_canceled : bool, is_error : bool):
         self.premium_increase = premium_increase
         self.warning_letter_enum = warning_letter_enum

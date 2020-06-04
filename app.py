@@ -13,7 +13,7 @@ def crunch():
     elif claims == ">=5":
         claims = 6
     result = process(int(claims), int(age_entry.get()))
-    result_text = "Premium increase: ${} Warning Ltr: {} is canceled: {}".format(result[0], result[1], result[2])
+    result_text = "Premium increase: ${} Warning Ltr: {} is canceled: {}".format(result.premium_increase, result.warning_letter_enum, result.is_policy_canceled)
     print(result_text)
     output_var.set(result_text)
 
