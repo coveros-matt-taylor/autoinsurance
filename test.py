@@ -1,8 +1,8 @@
 import pytest
-from logic import *
+from process import *
 
 cases = [
-    # claims, age, premium_increase, warning_letter, cancel_policy, error
+    # claims, age, premium_increase, warning_letter_enum, is_policy_canceled, is_error
     (0, 15, -1, WarningLetterEnum.NONE, False, True),
     (0, 16, 50, WarningLetterEnum.NONE, False, False),
     (0, 17, 50, WarningLetterEnum.NONE, False, False),
@@ -61,7 +61,6 @@ cases = [
 def test_thing(data):
     result = process(data[0], data[1])
     expected = AutoInsuranceAction(data[2], data[3], data[4], data[5])
-    # expected
     assert(expected.premium_increase == result.premium_increase)
     assert(expected.warning_letter_enum == result.warning_letter_enum)
     assert(expected.is_policy_canceled == result.is_policy_canceled)

@@ -2,9 +2,11 @@ import tkinter as tk
 from tkinter import OptionMenu as OptionMenu
 from tkinter import StringVar as StringVar
 
-from logic import *
+from process import *
 
 def crunch():
+    '''Executed when 'crunch!' button is clicked. Updates default output/instructions
+    with the results of the age and claims input'''
     claims = claims_var.get()
     if claims == 0 or claims == 1:
         claims = int(claims)
@@ -16,7 +18,6 @@ def crunch():
     result_text = "Premium increase: ${} Warning Ltr: {} is canceled: {}".format(result.premium_increase, result.warning_letter_enum, result.is_policy_canceled)
     print(result_text)
     output_var.set(result_text)
-
 
 window = tk.Tk()
 
@@ -50,10 +51,4 @@ button.pack()
 output = tk.Label(window, textvariable=output_var)
 output.pack()
 
-def handle_keypress(event):
-    # print(event.char)
-    selection = claims_var.get()
-    print(selection)
-
-window.bind("<Key>", handle_keypress)
 window.mainloop()
