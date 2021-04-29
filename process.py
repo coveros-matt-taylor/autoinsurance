@@ -4,6 +4,7 @@ class WarningLetterEnum(Enum):
     LTR1 = 'LTR1'
     LTR2 = 'LTR2'
     LTR3 = 'LTR3'
+    LTR4 = 'LTR4'
 
 class AutoInsuranceAction():
     def __init__(self, premium_increase : int, warning_letter_enum : WarningLetterEnum, is_policy_canceled : bool, is_error : bool):
@@ -35,5 +36,3 @@ def process(claims, age):
         return AutoInsuranceAction(0, WarningLetterEnum.NONE, True, False)
 
     return AutoInsuranceAction(-1, WarningLetterEnum.NONE, False, True)
-
-print(process(0, 20))
